@@ -17,23 +17,32 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <Partytown debug={true} forward={["dataLayer.push"]} />
+        <script
+          type="text/partytown"
+          dangerouslySetInnerHTML={{
+            __html: `{window.dataLayer = window.dataLayer || [];
+              function gtag() {
+                dataLayer.push(arguments);
+              }
+              gtag("js", new Date());
+              gtag("config", "G-TEMZC9BP9L");
+              
+              console.log(
+                "%ci am called many times but from the worker theard",
+                "color: green"
+              );
+              for (let i = 0; i < 2000; i++) {
+                if (window && window.dataLayer)
+                  window.dataLayer.push({ event: "page_loaded", value: 'dummy'});
+              }}`,
+          }}
+        ></script>
       </head>
       <body className="relative">
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-TEMZC9BP9L"
           type="text/partytown"
-        ></script>
-        <script
-          type="text/partytown"
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];
-          function gtag() {
-            dataLayer.push(arguments);
-          }
-          gtag("js", new Date());
-          gtag("config", "G-TEMZC9BP9L");`,
-          }}
         ></script>
         {/* <GoogleAnalytics gaId="G-TEMZC9BP9L" /> */}
         <Navbar />

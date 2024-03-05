@@ -8,13 +8,8 @@ const Hero = () => {
   const handleScroll = () => {};
 
   useEffect(() => {
-    console.log(
-      "%ci am called many times blocking the main theard",
-      "color: blue"
-    );
-    for (let i = 0; i < 2000; i++) {
-      window.dataLayer.push({ event: "page_loaded", value: `${i} times` });
-    }
+    if (window && window.dataLayer)
+      window.dataLayer.push({ event: "page_loaded", value: `times` });
   });
 
   return (
