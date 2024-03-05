@@ -8,8 +8,8 @@ const Hero = () => {
   const handleScroll = () => {};
 
   useEffect(() => {
-    if (window && window.dataLayer)
-      window.dataLayer.push({ event: "page_loaded", value: `times` });
+    if (typeof dataLayer !== "undefined")
+      dataLayer.push({ event: "page_loaded", value: `times` });
   });
 
   return (
