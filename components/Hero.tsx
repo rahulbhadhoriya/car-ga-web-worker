@@ -7,11 +7,6 @@ import { CustomButton } from ".";
 const Hero = () => {
   const handleScroll = () => {};
 
-  useEffect(() => {
-    if (typeof dataLayer !== "undefined")
-      dataLayer.push({ event: "page_loaded", value: `times` });
-  });
-
   return (
     <div className="hero">
       <div className="flex-1 pt-36 padding-x">
