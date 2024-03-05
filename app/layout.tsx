@@ -25,12 +25,8 @@ export default function RootLayout({
                 dataLayer.push(arguments);
               }
               gtag("js", new Date());
-              gtag("config", "G-TEMZC9BP9L", { 
-                page_path: window.location.pathname,
-            });
-              
-              console.log(
-                "i am called many times but from the worker theard");
+              gtag("config", "G-TEMZC9BP9L");
+              console.log("i am called many times but from the worker theard");
              `,
           }}
         ></script>
