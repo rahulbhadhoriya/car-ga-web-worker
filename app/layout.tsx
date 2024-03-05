@@ -25,16 +25,15 @@ export default function RootLayout({
                 dataLayer.push(arguments);
               }
               gtag("js", new Date());
-              gtag("config", "G-TEMZC9BP9L");
+              gtag("config", "G-TEMZC9BP9L", { 
+                page_path: window.location.pathname,
+            });
               
               console.log(
                 "%ci am called many times but from the worker theard",
                 "color: green"
               );
-              for (let i = 0; i < 2000; i++) {
-                if (window && window.dataLayer)
-                  window.dataLayer.push({ event: "page_loaded", value: 'dummy'});
-              }}`,
+             `,
           }}
         ></script>
       </head>
