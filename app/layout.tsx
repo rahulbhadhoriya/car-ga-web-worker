@@ -30,9 +30,7 @@ export default function RootLayout({
             });
               
               console.log(
-                "%ci am called many times but from the worker theard",
-                "color: green"
-              );
+                "i am called many times but from the worker theard");
              `,
           }}
         ></script>
