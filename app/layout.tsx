@@ -16,17 +16,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Partytown debug={true} forward={["dataLayer.push"]} />
+        <Partytown debug={true} forward={["dataLayer.push", "gtag"]} />
         <script
           type="text/partytown"
           dangerouslySetInnerHTML={{
-            __html: `{window.dataLayer = window.dataLayer || [];
-              function gtag() {
+            __html: `window.dataLayer = window.dataLayer || [];
+              window.gtag = function gtag() {
                 dataLayer.push(arguments);
               }
               gtag("js", new Date());
               gtag("config", "G-TEMZC9BP9L");
-              console.log("i am called many times but from the worker theard");
              `,
           }}
         ></script>
