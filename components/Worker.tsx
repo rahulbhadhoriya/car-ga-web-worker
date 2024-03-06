@@ -5,9 +5,8 @@ import Script from "next/script";
 import React from "react";
 
 //@ts-ignore
-
 export default function WorkerComponent({ callBack, gaId }) {
-  const workerRef = useRef();
+  const workerRef = useRef<Worker>();
 
   useEffect(() => {
     workerRef.current = new Worker(new URL("../utils/ga.ts", import.meta.url));
