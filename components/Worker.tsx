@@ -17,9 +17,5 @@ export default function WorkerComponent({ callBack, gaId }) {
     };
   }, []);
 
-  return (
-    <>
-      <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
-    </>
-  );
+  return null;
 }
