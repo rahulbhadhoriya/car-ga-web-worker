@@ -7,6 +7,23 @@ import { CustomButton } from ".";
 const Hero = () => {
   const handleScroll = () => {};
 
+  useEffect(() => {
+    //@ts-ignore
+    if (window.dataLayer) {
+      for (let i = 0; i < 20; i++) {
+        //@ts-ignore
+        window.dataLayer.push({
+          event: "hero_page_loaded",
+          value: `${i}times`,
+        });
+      }
+      console.log(
+        "check dataLayer 20 events just pushed to GA", //@ts-ignore
+        window.dataLayer
+      );
+    }
+  }, []);
+
   return (
     <div className="hero">
       <div className="flex-1 pt-36 padding-x">
