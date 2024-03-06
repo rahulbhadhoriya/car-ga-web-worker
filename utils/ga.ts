@@ -1,5 +1,6 @@
 /** */
 'use client'
+
 export function initGA() {
   window.dataLayer = window.dataLayer || [];
   window.gtag = function gtag() {
