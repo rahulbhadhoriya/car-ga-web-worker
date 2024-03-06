@@ -18,7 +18,7 @@ const Hero = () => {
         });
       }
       console.log(
-        "check dataLayer 20 events just pushed to GA", //@ts-ignore
+        "check dataLayer 20 events just pushed to GA ", //@ts-ignore
         window.dataLayer
       );
     }
