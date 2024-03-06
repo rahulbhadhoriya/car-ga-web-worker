@@ -9,7 +9,7 @@ export default function WorkerComponent({ callBack, gaId }) {
   const workerRef = useRef<Worker>();
 
   useEffect(() => {
-    workerRef.current = new Worker(new URL("../utils/ga.ts", import.meta.url));
+    workerRef.current = new Worker(new URL("../utils/ga.js", import.meta.url));
 
     if (callBack) callBack();
     return () => {
