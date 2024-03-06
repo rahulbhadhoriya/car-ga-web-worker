@@ -1,5 +1,5 @@
 /** */
-'use client'
+"use client";
 
 export function initGA() {
   window.dataLayer = window.dataLayer || [];
@@ -7,5 +7,5 @@ export function initGA() {
     dataLayer.push(arguments);
   };
   gtag("js", new Date());
-  gtag("config", 'G-TEMZC9BP9L');
+  gtag("config", "G-TEMZC9BP9L");
 }
